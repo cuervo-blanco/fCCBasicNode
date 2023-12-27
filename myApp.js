@@ -29,6 +29,9 @@ app.get('/now', (req, res, next) => {
 	res.send({"time": req.time});
 });
 
+app.get('/:word/echo', (req, res) => {
+	res.send({"echo": req.params.word});
+});
 
 function logger (req, res, next) {
   console.log(req.method + " " + req.path + " - " + req.ip);
