@@ -10,7 +10,11 @@ app.get('/', (req, res) => {
 	res.sendFile(absolutePath);
 });
 
+app.get('/json', (req, res) => {
 
+	res.send({"message": "Hello json"});
+
+});
 
 
 
