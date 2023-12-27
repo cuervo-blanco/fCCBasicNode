@@ -22,6 +22,13 @@ app.get('/json', logger, (req, res) => {
 
 });
 
+app.get('/now', (req, res, next) => {
+	req.time = new Date().toString();
+	next();
+}, (req, res) => {
+	res.send({"time": req.time});
+});
+
 
 function logger (req, res, next) {
   console.log(req.method + " " + req.path + " - " + req.ip);
