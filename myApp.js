@@ -3,12 +3,13 @@ let app = express();
 
 console.log('Hello World');
 
+app.use(__dirname + '/public');
+
 app.get('/', (req, res) => {
 	let absolutePath = __dirname + '/views/index.html';
 	res.sendFile(absolutePath);
 });
 
-app.use(__dirname + '/public');
 
 
 
