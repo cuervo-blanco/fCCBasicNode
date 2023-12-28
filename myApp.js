@@ -5,6 +5,10 @@ let bodyParser = require('body-parser');
 
 console.log('Hello World');
 
+
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+
 app.use('/public/', logger,  express.static(__dirname + '/public'));
 
 app.get('/', logger, (req, res) => {
@@ -39,6 +43,7 @@ app.get('/name', (req, res) => {
 app.get('/:word/echo', (req, res) => {
 	res.send({"echo": req.params.word});
 });
+
 
 function logger (req, res, next) {
   console.log(req.method + " " + req.path + " - " + req.ip);
