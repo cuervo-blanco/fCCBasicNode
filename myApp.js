@@ -44,6 +44,12 @@ app.get('/:word/echo', (req, res) => {
 	res.send({"echo": req.params.word});
 });
 
+app.post('/name', (req, res) => {
+	const first = req.body.first;
+	const last = req.body.last;
+	res.send({"name": `${first} ${last}`});
+});
+
 
 function logger (req, res, next) {
   console.log(req.method + " " + req.path + " - " + req.ip);
