@@ -30,8 +30,8 @@ app.get('/now', (req, res, next) => {
 });
 
 app.get('/name', (req, res) => {
-	const first = req.query.firstname;
-	const last = req.query.lastname;
+	const first = req.query.first;
+	const last = req.query.last;
 	res.send({"name": `${first} ${last}`});
 });
 
