@@ -29,6 +29,12 @@ app.get('/now', (req, res, next) => {
 	res.send({"time": req.time});
 });
 
+app.get('/name', (req, res) => {
+	const first = req.query.firstname;
+	const last = req.query.lastname;
+	res.send({"name": `${first} ${last}`});
+});
+
 app.get('/:word/echo', (req, res) => {
 	res.send({"echo": req.params.word});
 });
